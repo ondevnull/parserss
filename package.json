@@ -16,5 +16,14 @@
   "dependencies": {
     "feedparser": "^0.16.6",
     "request": "^2.36.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ghostbar/parserss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghostbar/parserss/issues"
+  },
+  "homepage": "https://github.com/ghostbar/parserss"
 }
