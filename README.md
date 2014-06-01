@@ -1,4 +1,4 @@
-parserss
+parserss [![Build Status](https://secure.travis-ci.org/ghostbar/parserss.png)](http://travis-ci.org/ghostbar/parserss)
 ========
 
 Small RSS parser for mere convenience, using `feedparser` and `request`.
