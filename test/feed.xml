@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ghostbar</title>
+    <description>Random thoughts on technology</description>
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      
+        <item>
+          
+          <title>Why my gpg does not support hkps?</title>
+          <link>/2014/05/30/why-my-gpg-does-not-support-hkps</link>
+          <guid isPermaLink="true">/2014/05/30/why-my-gpg-does-not-support-hkps</guid>
+          
+          <pubDate>Fri, 30 May 2014 20:23:08 -0500</pubDate>
+          <description>&lt;p&gt;I was changing my &lt;code&gt;~/.gnupg/gpg.conf&lt;/code&gt; values today and with those was using &lt;code&gt;hkps&lt;/code&gt; instead of the regular &lt;code&gt;hkp&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;And found out my debian system said &lt;code&gt;gpg&lt;/code&gt; did not support that protocol &lt;code&gt;hkps&lt;/code&gt;. &lt;strong&gt;What?!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Doing a little search I found out the package &lt;code&gt;gnupg&lt;/code&gt; does not ship with &lt;code&gt;hkps&lt;/code&gt; support because is not built with &lt;code&gt;libcurl&lt;/code&gt;, if you want to have &lt;code&gt;hkps&lt;/code&gt; support just install &lt;code&gt;gnupg-curl&lt;/code&gt; and done, now my servers are going on &lt;code&gt;hkps&lt;/code&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>parserss v0.0.1</title>
+          <link>/2014/05/23/parserss-v0.0.1</link>
+          <guid isPermaLink="true">/2014/05/23/parserss-v0.0.1</guid>
+          
+          <pubDate>Fri, 23 May 2014 18:44:30 -0500</pubDate>
+          <description>&lt;p&gt;I wrote &lt;code&gt;parserss&lt;/code&gt; a few days ago, it&#39;s basically a wrapper for &lt;code&gt;feedparser&lt;/code&gt; and it&#39;s convenient to have an easy to use JSON with all the data you require.&lt;/p&gt;
+
+&lt;p&gt;For more info just read the &lt;code&gt;README&lt;/code&gt; at the &lt;a href=&quot;https://github.com/ghostbar/parserss&quot;&gt;repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&#39;s available from &lt;code&gt;npm&lt;/code&gt; as well, just:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install --save parserss
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As soon as it have some tests it will be &lt;code&gt;v1.0.0&lt;/code&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Framework Challenge Bogodev 2014</title>
+          <link>/2014/05/18/framework-challenge-bogodev</link>
+          <guid isPermaLink="true">/2014/05/18/framework-challenge-bogodev</guid>
+          
+          <pubDate>Sun, 18 May 2014 07:05:03 -0500</pubDate>
+          <description>&lt;p&gt;Ayer participé en el framework challenge de Bogodev. Fue en la sede de Wayra Colombia que es genial.&lt;/p&gt;
+
+&lt;p&gt;El reto era hacer una visualización de objetos espaciales alrededor de otro (la &quot;estrella de la muerte&quot;) y actualizar sus posiciones a partir de coordenadas X, Y y Z.&lt;/p&gt;
+
+&lt;p&gt;La solución que le dió mi equipo consistió en Angularjs y D3js para el frontend y un expressjs muy simple para el backend.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.cloudup.com/7PpfqYofVN.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Para este tipo de visualización three.js da un mejor aspecto, genera 3D de verdad y no hay que forzar un fake 3d como nos tocó hacer con D3js, y eso fue lo que hicieron otros equipos. Pero: aprendimos D3js, SVG y cómo funciona D3js cuando da el órden de renderizado lo cuál fue muy instructivo (pista: cuando le pasas un array toma la posición como identificador para hacer el renderizado, tanto posición como transisiones).&lt;/p&gt;
+
+&lt;p&gt;Aquí está el código y cómo correrlo por si quieren probarlo: &lt;a href=&quot;https://github.com/ghostbar/fchallenge-ngjs&quot;&gt;https://github.com/ghostbar/fchallenge-ngjs&lt;/a&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Using angular-file-uploader and angular-file-model together</title>
+          <link>/2014/05/16/using-angular-file-uploader-together-with-angular-file-model</link>
+          <guid isPermaLink="true">/2014/05/16/using-angular-file-uploader-together-with-angular-file-model</guid>
+          
+          <pubDate>Fri, 16 May 2014 21:59:39 -0500</pubDate>
+          <description>&lt;p&gt;Two of the first angular module&#39;s I wrote were built to work together very well, they are &lt;a href=&quot;https://github.com/ghostbar/angular-file-uploader&quot;&gt;&lt;code&gt;angular-file-uploader&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/ghostbar/angular-file-uploader&quot;&gt;&lt;code&gt;angular-file-model&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;angular-file-model&lt;/code&gt; works as you actually expect &lt;code&gt;ng-model&lt;/code&gt; to work by default with files, that means: takes the data from an &lt;code&gt;&amp;lt;input type=&#39;file&#39;&amp;gt;&lt;/code&gt; and makes it available on the object passed to &lt;code&gt;ng-model&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;angular-file-uploader&lt;/code&gt; does the thing the regular &lt;code&gt;$http.post&lt;/code&gt; does not: letting you know about the current state of the upload in percentages.&lt;/p&gt;
+
+&lt;p&gt;Installing it is:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bower install angular-file-uploader angular-file-model
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So let&#39;s take a basic &lt;code&gt;uploader.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;file&amp;#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-file-model=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;form.theFile&amp;#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ng-click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;upload()&amp;#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Upload&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And now &lt;code&gt;file.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;angular-file-uploader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;angular-file-model&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;UploadCtrl&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&amp;#39;$scope&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&amp;#39;angularFileUploader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ngUploader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;newNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;newNameWithoutExtension&amp;#39;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;upload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;ngUploader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://domain.tld/upload/path&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;progress&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;progress&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>transloadit-api v1.0.0-rc1</title>
+          <link>/2014/05/14/transloadit-api-v1.0.0-rc1</link>
+          <guid isPermaLink="true">/2014/05/14/transloadit-api-v1.0.0-rc1</guid>
+          
+          <pubDate>Wed, 14 May 2014 00:10:02 -0500</pubDate>
+          <description>&lt;p&gt;A release candidate for &lt;code&gt;v1.0.0&lt;/code&gt; of &lt;code&gt;transloadit-api&lt;/code&gt; is out.&lt;/p&gt;
+
+&lt;p&gt;You can install it via &lt;code&gt;npm&lt;/code&gt; and give it a try.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install transloadit-api@1.0.0-rc1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now it supports the full &lt;a href=&quot;https://transloadit.com/docs/api-docs&quot;&gt;transloadit API&lt;/a&gt;, together with signature&#39;s creation, assemblies, notifications and templates management.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/ghostbar/transloadit-api&quot;&gt;source is on github&lt;/a&gt;, the &lt;a href=&quot;https://ghostbar.github.io/transloadit-api&quot;&gt;docs are in this website&lt;/a&gt; as well as in the comments in the code (which is the source for the website) and of course, &lt;a href=&quot;https://github.com/ghostbar/transloadit-api/issues&quot;&gt;any issue just report it on the github&#39;s tracker&lt;/a&gt;. It has a lot of tests but there are some tests missing, specially for operations that require internet.&lt;/p&gt;
+
+&lt;p&gt;Hopefully I will have time to write them this week and then release a proper &lt;code&gt;v1.0.0&lt;/code&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>transloadit-api v1.0.0-rc1</title>
+          <link>/2014/05/14/transloadit-api-v1.0.0-rc1-es</link>
+          <guid isPermaLink="true">/2014/05/14/transloadit-api-v1.0.0-rc1-es</guid>
+          
+          <pubDate>Wed, 14 May 2014 00:09:46 -0500</pubDate>
+          <description>&lt;p&gt;El release candidate de &lt;code&gt;v1.0.0&lt;/code&gt; para &lt;code&gt;transloadit-api&lt;/code&gt; ya está disponible.&lt;/p&gt;
+
+&lt;p&gt;Puedes instalarlo vía &lt;code&gt;npm&lt;/code&gt; y probarlo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install transloadit-api@1.0.0-rc1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora soporta la &lt;a href=&quot;https://transloadit.com/docs/api-docs&quot;&gt;API completa de transloadit&lt;/a&gt;: firmas, assemblies, notifications y manejo de plantillas.&lt;/p&gt;
+
+&lt;p&gt;El &lt;a href=&quot;https://github.com/ghostbar/transloadit-api&quot;&gt;código está en github&lt;/a&gt;, la &lt;a href=&quot;https://ghostbar.github.io/transloadit-api&quot;&gt;documentación en este website&lt;/a&gt; así como en los comentarios del código (que son la fuente para el website) y por supuesto: &lt;a href=&quot;https://github.com/ghostbar/transloadit-api/issues&quot;&gt;cualquier problema repórtalo en el tracker de github&lt;/a&gt;. Tiene un montón de pruebas pero aún le faltan algunas, especialmente para operaciones que requieren internet.&lt;/p&gt;
+
+&lt;p&gt;Quizás tenga tiempo para escribirlas esta semana y entonces lanzar una &lt;code&gt;v1.0.0&lt;/code&gt; como es.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>angular-geocomplete's first version</title>
+          <link>/2014/05/13/angular-geocomplete</link>
+          <guid isPermaLink="true">/2014/05/13/angular-geocomplete</guid>
+          
+          <pubDate>Tue, 13 May 2014 07:08:41 -0500</pubDate>
+          <description>&lt;p&gt;So I was needing a resulting JSON array with possible solutions for a given address or city name and then &lt;a href=&quot;https://github.com/ghostbar/angular-geocomplete/&quot;&gt;angular-geocomplete&lt;/a&gt; was made.&lt;/p&gt;
+
+&lt;p&gt;The great thing is that you can use it together with &lt;code&gt;typeahead&lt;/code&gt; and now you have address/location autocomplete, just like the one on Google Maps.&lt;/p&gt;
+
+&lt;p&gt;And yes, it does uses Google Maps&#39;s API.&lt;/p&gt;
+
+&lt;p&gt;What&#39;s the advantage of this thing? You get coordinates together with all the names.&lt;/p&gt;
+
+&lt;p&gt;Installable via &lt;code&gt;bower&lt;/code&gt; as well with &lt;code&gt;bower install angular-geocomplete&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any issue: to &lt;a href=&quot;https://github.com/ghostbar/angular-geocomplete/issues&quot;&gt;the GitHub tracker&lt;/a&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Primera versión de angular-geocomplete</title>
+          <link>/2014/05/13/angular-geocomplete-es</link>
+          <guid isPermaLink="true">/2014/05/13/angular-geocomplete-es</guid>
+          
+          <pubDate>Tue, 13 May 2014 07:02:37 -0500</pubDate>
+          <description>&lt;p&gt;Esta es la historia de un día que necesitaba con una dirección o el nombre de una ciudad conseguir un array JSON que me diese los posibles lugares donde eso fuese cierto.&lt;/p&gt;
+
+&lt;p&gt;Y entonces nació &lt;a href=&quot;https://github.com/ghostbar/angular-geocomplete&quot;&gt;angular-geocomplete&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lo fino es que se puede combinar con algún &lt;code&gt;typeahead&lt;/code&gt; y se obtiene un autocompletado demasiado genial como el de Google Maps.&lt;/p&gt;
+
+&lt;p&gt;Y sí, usa el API de Google Maps.&lt;/p&gt;
+
+&lt;p&gt;¿Cuál es la gran ventaja? Que obtienes no sólo el nombre del lugar sino sus coordenadas.&lt;/p&gt;
+
+&lt;p&gt;Instalable vía &lt;code&gt;bower&lt;/code&gt; también con &lt;code&gt;bower install angular-geocomplete&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Problemas a los &lt;a href=&quot;https://github.com/ghostbar/angular-geocomplete/issues&quot;&gt;issues de GitHub&lt;/a&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Using Firefox feels safer</title>
+          <link>/2014/05/13/using-firefox-feels-safer</link>
+          <guid isPermaLink="true">/2014/05/13/using-firefox-feels-safer</guid>
+          
+          <pubDate>Tue, 13 May 2014 00:50:20 -0500</pubDate>
+          <description>&lt;p&gt;For the last couple of years I was using Chrome, the main reasons were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Faster&lt;/li&gt;
+&lt;li&gt;Less memory&lt;/li&gt;
+&lt;li&gt;Better rendering (I used to complain a lot about &lt;a href=&quot;http://ghostbar.co/2009/12/18/firefox-with-chrome-font-rendering-engine-no-way/&quot;&gt;Firefox&#39;s text rendering&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;But now, all those issues are long gone and there are bigger issues to face, and one of the biggest is: privacy.&lt;/p&gt;
+
+&lt;p&gt;The thing is, while Chrome is a modified and branded version of Google there&#39;s a huge issue with your privacy. Specially when they require you to be logged into your Google account to install some extensions and keep you logged &quot;syncing&quot; your data.&lt;/p&gt;
+
+&lt;p&gt;They know how to avoid extensions to be usable at certain URLs and they actually do it at their Chrome Store, so it just takes a pair of seconds to know they may disable your privacy enhancing extensions on their &lt;code&gt;*google.com&lt;/code&gt; domains.&lt;/p&gt;
+
+&lt;p&gt;That kind of things makes me feel less safer using Chrome and a lot safer using Mozilla, a NGO that has shown their commitment for a free and open internet where user&#39;s rights are first.&lt;/p&gt;
+
+&lt;p&gt;I used to complain a lot about Firefox: slow, bloated, consuming all my memory, crashing randomly. Now it just works as it should and even better: &lt;strong&gt;makes me feel safe&lt;/strong&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Sí, nos bloquearon</title>
+          <link>/2014/02/15/si-nos-bloquearon</link>
+          <guid isPermaLink="true">/2014/02/15/si-nos-bloquearon</guid>
+          
+          <pubDate>Sat, 15 Feb 2014 03:43:26 -0500</pubDate>
+          <description>&lt;p&gt;Tanto CONATEL como CANTV han negado que haya habido censura en el Internet venezolano estos últimos dos días, aquí están las pruebas que sí lo han hecho.&lt;/p&gt;
+
+&lt;p&gt;El primer bloqueo fue del servidor de imágenes de Twitter bajo &lt;code&gt;pbs.twimg.com&lt;/code&gt; el 13 de febrero de 2014. Bajo este dominio se sirven las imágenes de Twitter, tanto imágenes de perfil como imágenes de contenido generado por el usuario.&lt;/p&gt;
+
+&lt;p&gt;Este bloqueo fue por CANTV, únicamente. Pueden ver los resultados de intentar descargar una imágen y luego hacer &lt;code&gt;traceroute&lt;/code&gt; tanto &lt;a href=&quot;http://pastebin.com/P8h71vTV&quot;&gt;en Inter (que sí funcionó)&lt;/a&gt; como &lt;a href=&quot;http://pastebin.com/E7eYTZNp&quot;&gt;con CANTV (que tenía bloqueado)&lt;/a&gt;. (Si no pueden ver los archivos, es porque pastebin.com aún está siendo bloqueado, como lo es al momento de escribir esto: 04:49:13 UTC-0430).&lt;/p&gt;
+
+&lt;p&gt;Los reportes no fueron aislados y se dejaron sentir por gran cantidad de usuarios. Los reportes confirmaron que sólo CANTV era el ISP con problemas. Al cambiar a Movistar, Digitel e Inter, las imágenes cargaban con normalidad.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/planwac&quot;&gt;William Castillo&lt;/a&gt;, presidente de CONATEL, &lt;a href=&quot;http://laiguana.tv/noticias/2014/02/14/12304/DESDE-TELESUR-WILLIAM-CASTILLO-LE-MANDO-UN-MENSAJE-A-LOS-MEDIOS-INTERNACIONALES.html&quot;&gt;dió declaraciones a Telesur TV&lt;/a&gt; donde afirmó que &lt;em&gt;la falla&lt;/em&gt; se dió en muchos países de latinoamérica también. No consigo fuentes para confirmar eso. Este argumento lo repite CANTV en un comunicado, donde dicen que la falla se dió también en varios países de latinoamérica. Incluso, fuentes mexicanas cubren la censura de las imágenes en Twitter de Venezuela y nunca se menciona que haya habido fallas en México. El comunicado, emitido por CANTV, &lt;a href=&quot;http://www.cantv.com.ve/seccion.asp?pid=1&amp;amp;sid=144&amp;amp;NotID=6460&quot;&gt;repite ese argumento&lt;/a&gt;, sin fuentes.&lt;/p&gt;
+
+&lt;p&gt;Así mismo, &lt;a href=&quot;https://twitter.com/wexler&quot;&gt;Nu Wexler&lt;/a&gt;, &lt;a href=&quot;http://www.linkedin.com/in/nwexler&quot;&gt;portavoz de Twitter&lt;/a&gt;, &lt;a href=&quot;http://www.bloomberg.com/news/2014-02-14/twitter-says-venezuela-blocks-its-images-amid-protest-crackdown.html&quot;&gt;confirmó a Bloomberg que sus imágenes estaban siendo bloqueadas en Venezuela&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Más pruebas de las trazas que muestran a CANTV deteniendo la ruta para llegar a &lt;code&gt;pbs.twimg.com&lt;/code&gt; están &lt;a href=&quot;https://twitter.com/lorissantamaria/status/434153609781981184/photo/1&quot;&gt;aquí&lt;/a&gt; &lt;a href=&quot;https://twitter.com/lorissantamaria/status/434154104621760514&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pero los bloqueos no terminan allí, &lt;a href=&quot;https://twitter.com/planwac/status/434388069349748737&quot;&gt;el presidente de CONATEL en su cuenta de Twitter confirma que se han bloqueado varios sitios desde donde se atacan a sitios gubernamentales&lt;/a&gt; y horas después se empiezan a sentir quejas por el bloqueo a &lt;a href=&quot;http://pastebin.com&quot;&gt;pastebin.com&lt;/a&gt;. Pastebin es un sitio donde se comparte texto plano. Desde este sitio no se puede ejecutar ningún ataque. Sin embargo, se confirma que está bloqueado y no sólo por CANTV, sino por Inter también.&lt;/p&gt;
+
+&lt;p&gt;Al hacer trazas y hacer pruebas de resolución de dominio se consigue que: &lt;a href=&quot;https://twitter.com/yondri/status/434456214978564096/photo/1&quot;&gt;CANTV bloqueó&lt;/a&gt; &lt;a href=&quot;https://gist.github.com/ghostbar/9010495&quot;&gt;la resolución del dominio pastebin.com desde sus DNS&lt;/a&gt; (&lt;a href=&quot;https://i.cloudup.com/oyiwqpFsIw-2000x2000.png&quot;&gt;no así resolver &lt;code&gt;pbs.twimg.com&lt;/code&gt; o &lt;code&gt;google.com&lt;/code&gt;&lt;/a&gt;) y que &lt;a href=&quot;https://gist.github.com/ghostbar/9012910&quot;&gt;intentar llegar a la IP mediante una traza es imposible&lt;/a&gt;. Estos servidores DNS son controlados directamente por CANTV. Otros servidores DNS resuelven correctamente el dominio &lt;code&gt;pastebin.com&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora, &lt;a href=&quot;http://pastebin.com/4QaK7jag&quot;&gt;Inter no sacó &lt;code&gt;pastebin.com&lt;/code&gt; de sus DNS&lt;/a&gt; sino que &lt;a href=&quot;https://twitter.com/anibalrojas/status/434477751790489600&quot;&gt;únicamente bloqueó&lt;/a&gt; &lt;a href=&quot;https://twitter.com/ghostbar/status/434452582849732608&quot;&gt;la IP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A todas estas, William Castillo afirma en su perfil de Twitter: &lt;a href=&quot;https://twitter.com/planwac/status/434468976563740672&quot;&gt;«Expertos informáticos d oposiciòn han reconocido hoy en radio q es improbable un bloqueo de Twitter desde Venezuela #GuerraDeDesinformación»&lt;/a&gt;. No sé quiénes serán, pero eso es una mera opinión y la realidad es que en Venezuela, los ISP han estado bloqueando páginas web enteras. Ante los hechos (y no las opiniones) vale la pena hacer saber &lt;a href=&quot;http://www.oas.org/es/cidh/expresion/showarticle.asp?artID=848&amp;amp;lID=2&quot;&gt;la declaración conjunta que hiciesen los relatores sobre libertad de expresión y opinión de las Naciones Unidas el 1 de junio de 2011&lt;/a&gt; (no está demás).&lt;/p&gt;
+
+&lt;p&gt;Para detener ataques informáticos no es necesario bloquear sitios web, mucho menos sitios como pastebin.com que sólo almacenan información. Se detiene con infraestructura sólida, con balance de cargas y contenido distribuido por regiones (CDN). Igualmente usando software con las actualizaciones de seguridad. Pastebin.com es un sitio que sólo almacena información y bloquear información constituye censura.&lt;/p&gt;
+
+&lt;p&gt;La censura es inconstitucional, establecido así en el artículo 57. El bloqueo es un acto de censura. No sólo eso, no hay transparencia sobre qué están bloqueando ni por qué. El mismo artículo 57 de la constitución prohíbe la censura a los funcionarios para dar cuenta de los asuntos bajo sus responsabilidades y la recién aprobada ley de infogobierno en su artículo 13 habla del principio de transparencia y la publicidad máxima que debe dársele a sus actuaciones. Espero que los funcionarios públicos den ejemplo de ciudadanía y hagan cumplir las leyes a cabalidad. Ya hay leyes de delitos informáticos, no es necesario romper una ley (ni la constitución) para hacer cumplir otra.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Serendipities of the day</title>
+          <link>/2014/01/22/serendipity</link>
+          <guid isPermaLink="true">/2014/01/22/serendipity</guid>
+          
+          <pubDate>Wed, 22 Jan 2014 18:31:18 -0500</pubDate>
+          <description>&lt;p&gt;So today has been a fairly good day of serendipities and I thought it would make for an awesome post.&lt;/p&gt;
+
+&lt;p&gt;I&#39;m starting to love having io9.com in my reading-list everyday.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://io9.com/12-of-the-most-astounding-living-fossils-known-to-sci-1506539384&quot;&gt;12 of the most astounding living fossils known to science&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://io9.com/a-white-dwarf-just-exploded-creating-the-closest-super-1506539405&quot;&gt;A white dwarf just exploded and created a supernova&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://io9.com/the-time-gateway-is-open-move-to-neutropolis-before-pr-1506383451&quot;&gt;Futuristic cities concept art&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>The Road to Happiness incluye no usar WordPress</title>
+          <link>/2013/08/26/the-road-to-happiness-incluye-no-usar-wordpress</link>
+          <guid isPermaLink="true">/2013/08/26/the-road-to-happiness-incluye-no-usar-wordpress</guid>
+          
+          <pubDate>Mon, 26 Aug 2013 03:03:23 -0500</pubDate>
+          <description>&lt;p&gt;Ayer hubo una interesante conversa en Twitter sobre WordPress, lo mínimo para correrlo y opciones para &lt;em&gt;gente pobre&lt;/em&gt; (como dijo Faneyth).&lt;a href=&quot;https://twitter.com/phenobarbital/status/371819458421346304&quot;&gt;0&lt;/a&gt; &lt;a href=&quot;https://twitter.com/LuisAlejandro/status/371821008681852930&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;https://twitter.com/zentraedi/status/371821336706166786&quot;&gt;2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Yo soy exponente de la &lt;em&gt;opción para gente pobre&lt;/em&gt; (LOL) con Jekyll y GitHub Pages. Migré en &lt;a href=&quot;http://ghostbar.co/2012/12/15/switched-to-jekyll/&quot;&gt;diciembre del 2012&lt;/a&gt; y no fué por pobreza exactamente sino porque WordPress (junto con la mayoría de opciones para blogging como Drupal), al menos para mi, no tiene sentido con las tecnologías disponibles actualmente.&lt;/p&gt;
+
+&lt;h2&gt;¿Bases de datos en un blog? ¿Para qué?&lt;/h2&gt;
+
+&lt;p&gt;Esto es algo que no tiene sentido. Si bien las bases de datos ayudan a organizar información de manera ordenada eso es algo que un blog NO necesita. El contenido es estático en su mayoría, lo único dinámico son los comentarios y con lo fácil que es usar un servicio tipo &lt;a href=&quot;http://disqus.com&quot;&gt;Disqus&lt;/a&gt; ya esa información no es necesaria almacenarla en un sistema propio.&lt;/p&gt;
+
+&lt;h2&gt;Usar un CMS es renderizar, una y otra vez la misma cosa. ¿Tiene sentido?&lt;/h2&gt;
+
+&lt;p&gt;En mi opinión es desperdiciar poder de procesamiento. ¿Por qué? Porque es el mismo HTML, una y otra vez, y otra vez, y otra vez. La única forma de cambiar esto es colocando un caché por encima, lo cuál es aún más overhead, más cosas que mantener, menos tiempo para hacer cosas que de hecho sean útiles y no simple &lt;em&gt;mantenimiento&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Seguridad&lt;/h2&gt;
+
+&lt;p&gt;Todos sabemos que un CMS es propenso a tener problemas de seguridad, alguien consigue un bug y lo explota. Con Jekyll y los otros generadores de contenido estático eso no pasa. El problema de seguridad pasa a ser en el hosting y es mucho más fácil controlar un punto que dos.&lt;/p&gt;
+
+&lt;h2&gt;Rapidez&lt;/h2&gt;
+
+&lt;p&gt;Para cualquier servidor tan sólo servir un archivo estático es mucho más rápido que generar un archivo y servirlo.&lt;/p&gt;
+
+&lt;h2&gt;Hacer templates es mucho más sencillo&lt;/h2&gt;
+
+&lt;p&gt;En vez de un día en 1 hora puedes tener todo el template de un blog listo. TODO.&lt;/p&gt;
+
+&lt;h2&gt;Es simple HTML&lt;/h2&gt;
+
+&lt;p&gt;¿Qué más fácil de hacer debugging que de simple HTML?!&lt;/p&gt;
+
+&lt;h2&gt;Extra: GitHub da hosting gratuito&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; tiene un servicio llamado GitHub Pages el cuál te permite hospedar archivos estáticos y mantenerlos organizados en un repositorio &lt;code&gt;git&lt;/code&gt;. Además, si usas Jekyll puedes simplemente subirlo a GitHub y GitHub Pages los generará y publicará. Además puedes usar dominios personalizados, por lo que al menos que no estés usando un &lt;code&gt;A record&lt;/code&gt; en tu DNS sino un &lt;code&gt;CNAME&lt;/code&gt; o la persona se sepa la IP de GitHub, nadie se dará cuenta que el servidor que lo está sirviendo es de GitHub.&lt;/p&gt;
+
+&lt;p&gt;También puede ser servidor por un simple NGINX o &lt;em&gt;ponga aquí el nombre de su servidor HTTP favorito&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;El tiempo del &lt;em&gt;dynamic blog engine&lt;/em&gt; pasó&lt;/strong&gt;.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>MongoDB: $pull from an embedded document array</title>
+          <link>/2013/08/26/mongodb-pull-from-embedded-document-array</link>
+          <guid isPermaLink="true">/2013/08/26/mongodb-pull-from-embedded-document-array</guid>
+          
+          <pubDate>Mon, 26 Aug 2013 02:43:25 -0500</pubDate>
+          <description>&lt;p&gt;TL;DR:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$pull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;embedded_doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;small&gt;Queries are wrote for the &lt;code&gt;mongo&lt;/code&gt; shell&lt;/small&gt;&lt;/p&gt;
+
+&lt;h2&gt;Dot based access&lt;/h2&gt;
+
+&lt;p&gt;If you have been using &lt;a href=&quot;http://mongodb.org&quot;&gt;MongoDB&lt;/a&gt; for some time, then there are big chances that you will know the &quot;dot-based access&quot; on the &lt;code&gt;find&lt;/code&gt; queries. This is the easier way to write those queries and will probably want to keep using that. Like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;embedded_doc._id&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The thing is that does not work with everything, like: Arrays of embedded documents!&lt;/p&gt;
+
+&lt;h2&gt;Little example schema&lt;/h2&gt;
+
+&lt;p&gt;Let&#39;s suppose the following little schema (written for &lt;a href=&quot;http://mongoosejs.com&quot;&gt;Mongoose&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;Document&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;embedded_doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The collection of &lt;code&gt;Document&lt;/code&gt; is called &lt;code&gt;documents&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Updating arrays&lt;/h2&gt;
+
+&lt;p&gt;If the arrays are not embedded documents I can actually just use a regular &lt;code&gt;update&lt;/code&gt; like with any other field combined with a &lt;code&gt;$set&lt;/code&gt; and change all the array like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]}}})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And using conveniently &lt;code&gt;$pull&lt;/code&gt; and &lt;code&gt;$addToSet&lt;/code&gt;. But when it comes to embedded documents the history is very different. You can&#39;t make a simple &lt;code&gt;$set&lt;/code&gt; because it will give you an error related to &lt;code&gt;ModId&lt;/code&gt; which you can&#39;t change. So you really need to use &lt;code&gt;$push&lt;/code&gt;, &lt;code&gt;$addToSet&lt;/code&gt;, &lt;code&gt;$pull&lt;/code&gt; and it&#39;s friends.&lt;/p&gt;
+
+&lt;p&gt;So all those you can do it as in the manual, but what if you want to make a &lt;code&gt;$pull&lt;/code&gt; over an array of objects and &lt;code&gt;w&lt;/code&gt; and &lt;code&gt;x&lt;/code&gt; are not unique? Well, that&#39;s why you probably made them an embedded document! Then you have the &lt;code&gt;_id&lt;/code&gt; and you try to use the dot notation like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$pull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;embedded_doc._id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And it looks good, except that it wont work. You have to use the complete syntax like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;documents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$pull&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;embedded_doc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Too many authentication failures on SSH</title>
+          <link>/2013/08/22/too-many-authentication-failures-ssh</link>
+          <guid isPermaLink="true">/2013/08/22/too-many-authentication-failures-ssh</guid>
+          
+          <pubDate>Thu, 22 Aug 2013 21:08:25 -0500</pubDate>
+          <description>&lt;p&gt;It seems like having several SSH keys on the same system starts giving issues with some SSH servers. The issue is that while connecting it returns:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Too many authentication failures for xxxxxx.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The fix for this is very simple and quick. Open up your &lt;code&gt;~/.ssh/config&lt;/code&gt; and put:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;IdentitiesOnly yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can add that per-host or wide (without indents, even as the first line in the config file!).&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Starting a Raspbery Pi without a display</title>
+          <link>/2013/08/22/starting-raspberry-without-display</link>
+          <guid isPermaLink="true">/2013/08/22/starting-raspberry-without-display</guid>
+          
+          <pubDate>Thu, 22 Aug 2013 02:12:22 -0500</pubDate>
+          <description>&lt;p&gt;Recently (actually 3 weeks ago) &lt;a href=&quot;http://instagram.com/p/cdELMsNxk-/&quot;&gt;I bought a Raspberry Pi for myself&lt;/a&gt; and it wasn&#39;t until today that I power it on by the first time. Call it RealLife™ for simplicity.&lt;/p&gt;
+
+&lt;p&gt;Anyway, one of my first issues was that I do not own any display with RCA or HDMI inputs, and all I have is a router that works as my WiFi hotspot as well. Since this starter kit comes with &lt;a href=&quot;http://raspbian.org&quot;&gt;Raspbian&lt;/a&gt; by default I made some research and found that the default &lt;code&gt;user:password&lt;/code&gt; is &lt;code&gt;pi:raspberry&lt;/code&gt;, &lt;code&gt;ssh-server&lt;/code&gt; is on by default and the network interface &lt;code&gt;eth0&lt;/code&gt; tries to grab an IP automatically via DHCP.&lt;/p&gt;
+
+&lt;p&gt;So starting my Raspberry Pi was as easy as connect a wire to my device and the router, then a quick &lt;code&gt;nmap -sP 192.168.0.0/24&lt;/code&gt; and there it was, under the hostname &lt;code&gt;raspberry&lt;/code&gt; my brand new raspberry.&lt;/p&gt;
+
+&lt;p&gt;After a &lt;code&gt;ssh pi@192.168.0.X&lt;/code&gt; a nice &lt;code&gt;raspi-conf&lt;/code&gt; was receiving me to start setting up my device.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>postinstall script on heroku with different environment than production</title>
+          <link>/2013/05/16/postinstall-script-on-heroku-with-env-different-to-production</link>
+          <guid isPermaLink="true">/2013/05/16/postinstall-script-on-heroku-with-env-different-to-production</guid>
+          
+          <pubDate>Thu, 16 May 2013 00:00:00 -0500</pubDate>
+          <description>&lt;p&gt;While trying to push a little project to &lt;a href=&quot;http://heroku.com&quot;&gt;Heroku&lt;/a&gt; based on &lt;a href=&quot;http://brunch.io&quot;&gt;Brunch&lt;/a&gt;, I ran into a difficult problem: I needed to move some files according to the environment being built, so, if it was &lt;code&gt;staging&lt;/code&gt; should &lt;code&gt;mv&lt;/code&gt;/&lt;code&gt;cp&lt;/code&gt; a different set of files than if were &lt;code&gt;production&lt;/code&gt;. I used &lt;code&gt;npm&lt;/code&gt;&#39;s &lt;code&gt;postinstall&lt;/code&gt; script field and everything ran OK, until I saw that it actually was copying the &lt;code&gt;production&lt;/code&gt; files.&lt;/p&gt;
+
+&lt;p&gt;After digging a lot, I saw the reason: Heroku uses &lt;em&gt;buildpacks&lt;/em&gt; and the Node.js buildpack runs &lt;code&gt;npm install --production&lt;/code&gt; which forces &lt;code&gt;NODE_ENV&lt;/code&gt; to be production. Not only that, it actually runs the script in an isolated shell, so all the configs you pass to heroku via &lt;code&gt;heroku config:set&lt;/code&gt; are not available. You can customize this buildpack, so I went ahead, &lt;a href=&quot;https://github.com/eserre/heroku-buildpack-nodejs-staging&quot;&gt;forked the buildpack&lt;/a&gt; and made a simple addition: added a &lt;code&gt;REAL_ENV=staging&lt;/code&gt; variable to the &lt;code&gt;bin/compile:46&lt;/code&gt; and made the scripts that are being launched from &lt;code&gt;postinstall&lt;/code&gt; to check &lt;code&gt;REAL_ENV&lt;/code&gt; instead of &lt;code&gt;NODE_ENV&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Why not use &lt;code&gt;NODE_ENV&lt;/code&gt; directly? Because my tests showed my that &lt;code&gt;npm install --production&lt;/code&gt; forces &lt;code&gt;NODE_ENV&lt;/code&gt; and got it rewritten.&lt;/p&gt;
+
+&lt;p&gt;After this change, using this buildpack was pretty easy, just:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;heroku config:set BUILDPACK_URL=https://github.com/eserre/heroku-buildpack-nodejs-staging
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Done, push and get it rebuilt.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Desde el CENIT anuncian plan de Retroceso Tecnológico para las universidades</title>
+          <link>/2013/05/10/desde-el-cenit-anuncian-plan-de-retroceso-tecnologico</link>
+          <guid isPermaLink="true">/2013/05/10/desde-el-cenit-anuncian-plan-de-retroceso-tecnologico</guid>
+          
+          <pubDate>Fri, 10 May 2013 00:00:00 -0500</pubDate>
+          <description>&lt;p&gt;&lt;strong&gt;Actualización [2013-05-11 14:31:11 UTC-0430]&lt;/strong&gt;: Justamente 1 día antes de producirse esta noticia en Venezuela, en Chile anuncia el &lt;a href=&quot;http://www.reuna.cl/index.php/es/noticias-nuestros-socios/2308-reuna-cuadruplico-su-capacidad-de-conexion-a-las-redes-internacionales&quot;&gt;REUNA (el Reacciun chileno) que cuadruplicaron su capacidad hasta 1.35Gbps &lt;strong&gt;hacia el extranjero&lt;/strong&gt;&lt;/a&gt; para que los investigadores y científicos tengan más con que trabajar, así como anunciaron que han unido más universidades con IXPs locales.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Actualización [2013-05-10 22:22:16 UTC-0430]&lt;/strong&gt;: Para entender un poco más de cómo funciona el internet pueden ver &lt;a href=&quot;https://www.youtube.com/watch?v=a5837LcDHfE&quot;&gt;este vídeo precisamente sobre IXP y de donde sale el internet junto a sus interconexiones&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hoy ha salido a relucir, gracias a &lt;a href=&quot;https://twitter.com/uraisa&quot;&gt;@uraisa&lt;/a&gt;, que &lt;a href=&quot;http://periodistasandinos.blogspot.com/2013/05/el-cenit-reducira-el-ancho-de-banda-las.html&quot;&gt;el CENIT reducirá el ancho de banda a las universidades venezolanas&lt;/a&gt;, mediante orden de la OPSU.&lt;/p&gt;
+
+&lt;h2&gt;Un poco de background sobre la red universitaria&lt;/h2&gt;
+
+&lt;p&gt;El CENIT ofrece -- entre varios otros servicios -- un enlace dedicado a la Red Académica venezolana llamada &lt;a href=&quot;http://www2.reacciun.ve/&quot;&gt;Reacciun&lt;/a&gt;. Esta red es lo que se llama un &lt;a href=&quot;https://en.wikipedia.org/wiki/National_research_and_education_network&quot;&gt;NREN&lt;/a&gt;, un ISP dedicado a apoyar las &lt;strong&gt;necesidades&lt;/strong&gt; de las comunidades de investigación y educación en un país.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;No entiendo cómo degradar un servicio apoya las necesidades de comunidad alguna, mucho menos de investigación y educación donde más bien se necesita estar adelantados al resto de los servicios para permitir la innovación&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;La excusa&lt;/h2&gt;
+
+&lt;p&gt;Según un monitoreo que hicieron desde la OPSU, aún sin publicar, se subutiliza el ancho de banda y debido a eso decidieron «&lt;em&gt;sincerar&lt;/em&gt;» su uso, porque muchas universidades no lo «&lt;em&gt;aprovechan adecuadamente&lt;/em&gt;».&lt;/p&gt;
+
+&lt;h2&gt;¿Pero qué es el ancho de banda digital?&lt;/h2&gt;
+
+&lt;p&gt;El ancho de banda es la capacidad máxima de transferencia entre un punto y otro. Esta capacidad depende de la infraestructura instalada, por lo cuál el ancho de banda en una red hogareña &lt;strong&gt;cableada&lt;/strong&gt; suele estar entre los 10Mbps y los 100Mbps, pero cuando hacemos uso del internet nuestro ISP limita el ancho de banda basado en cuanto hemos contratado y esos planes están limitados por su &lt;strong&gt;propia capacidad instalada&lt;/strong&gt;. Es decir, para que CANTV mejore sus planes tiene que crear una mejor infraestructura &lt;strong&gt;y&lt;/strong&gt; comprar más tráfico a algún Internet Transit Provider o crear un enlace a algún Internet Exchange Point (o IXP, el cuál suele salir mucho más barato que un Internet Transit Provider, pues consiste en hacer peering en una infraestructura común y evitar pasar por un Transit Provider).&lt;/p&gt;
+
+&lt;p&gt;Ahora, si Reacciun es una red propia, con una capacidad de ancho de banda &lt;strong&gt;instalada ya&lt;/strong&gt;, suficiente para proveer el actual ancho de banda, y el Internet Transit Provider o IXP limita es la cantidad de datos consumidos y no el ancho de banda, que está limitada sí por la capacidad instalada en el enlace Reacciun/ISP ➜ ITP/IXP (es decir, cuánta data por segundo aguanta el cable que conecta Reacciun a su proveedor de tráfico), ¿entonces cuál es la verdadera razón para bajar el ancho de banda?&lt;/p&gt;
+
+&lt;h2&gt;¿Por qué no más bien se conectan a otro IXP o cobran bajo consumo?&lt;/h2&gt;
+
+&lt;p&gt;Es difícil ver un aumento en el costo de mantener una infraestructura ya montada, siendo el costo mayor siempre la creación y no el mantenimiento.&lt;/p&gt;
+
+&lt;p&gt;Si se está cobrando por un servicio donde sobra capacidad significa que se está cobrando demás, deberían más bien bajar los precios ¿no? O invertir ese extra en conectarse a otro IXP y aumentar el tráfico por peering y abaratar aún más los costos mientras se mejora el servicio.&lt;/p&gt;
+
+&lt;p&gt;O incluso, para sincerar, cobren simplemente por consumo y no por ancho de banda, dejen que las universidades puedan conectarse tan rápido como les permita su hardware.&lt;/p&gt;
+
+&lt;h2&gt;¿Por qué no mejor implementan IPv6?&lt;/h2&gt;
+
+&lt;p&gt;Son un NREN, deberían estar adelantados. Más cuando sus clientes son tan pocos a nivel tal que pueden reunirse con todos ellos en una sala.&lt;/p&gt;
+
+&lt;h2&gt;¿Por qué propongo mejorar el ancho de banda?&lt;/h2&gt;
+
+&lt;p&gt;Porque es falso que las universidades no la usen, más bien ha sido una limitante constante. Raisa muy bien lo dice en su artículo y cuando fui estudiante en la UNET también era un punto que surgía una y otra vez al proponer servicios con salida al internet.&lt;/p&gt;
+
+&lt;p&gt;Les explico: proponer un repositorio Debian al que se tenga acceso desde la internet en una universidad venezolana es casi prohibitivo, sólo la ULA tiene uno. Mientras que en otros países es precisamente la academia la que ha prestado apoyo a la comunidad open source para replicarse y tener infraestructura donde desarrollarse.&lt;/p&gt;
+
+&lt;p&gt;De igual forma, la limitación de ancho de banda ha hecho que en muchas universidades se apliquen reglas de calidad del servicio para evitar el abotellamiento de paquetes en la red.&lt;/p&gt;
+
+&lt;p&gt;¿Y nos van a decir que no se usa? ¡Si más bien la poca que hay es una enorme limitante para más y mejores desarrollos!&lt;/p&gt;
+
+&lt;h1&gt;Degradar un servicio es retrógrado&lt;/h1&gt;
+
+&lt;p&gt;Es retrógrado degradar un servicio, es retrógrado ofrecer peor conexión, es retrógrado cuando hay más y más data cada vez rondando en la internet. Es retrógrado cuando entramos en la era de la BigData y no se puede hacer uso de ella porque nos están limitando más en vez de ampliar capacidad. Es retrógrado porque la capacidad instalada para soportar esto &lt;strong&gt;ya está instalada&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Es retrógrado, es absurdo y habla mucho de las intenciones del gobierno para con las universidades: atraso.&lt;/strong&gt;&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Ley de Infogobierno: ley a medida del gobierno</title>
+          <link>/2013/05/07/ley-a-medida-del-gobierno-ley-infogobierno</link>
+          <guid isPermaLink="true">/2013/05/07/ley-a-medida-del-gobierno-ley-infogobierno</guid>
+          
+          <pubDate>Tue, 07 May 2013 23:23:17 +0000</pubDate>
+          <description>&lt;p&gt;&lt;strong&gt;Actualización 2013-05-08 13:19:26 UTC-0430&lt;/strong&gt;: Erróneamente dije que desde el 2013 la Ley del Registro Civil contempla la digitalización del registro civil, es desde finales de 2009, fecha en la cuál fue aprobada la ley.&lt;/p&gt;
+
+&lt;p&gt;Mi intención desde el principio era asistir a las discusiones públicas del proyecto de Ley de Infogobierno, pero dado que la fecha se aproxima y mi agenda no se desocupa, no podré estar.&lt;/p&gt;
+
+&lt;p&gt;A pesar de eso, estoy condensando mis observaciones en este post para que, idealmente, lo lean en las discusiones públicas que se den.&lt;/p&gt;
+
+&lt;h2&gt;¿Basado en software libre?&lt;/h2&gt;
+
+&lt;p&gt;Lo primero que me preocupa es el uso de la frase «&lt;em&gt;basado en software libre&lt;/em&gt;» en vez de «&lt;em&gt;ser software libre&lt;/em&gt;». El software usado en la administración pública venezolana &lt;strong&gt;tiene que ser software libre&lt;/strong&gt;, no basado. ¿Por qué no dejar el «basado en»? Porque hay licencias de software libre como la MIT y la BSD que permiten el relicenciamiento de código derivado a cualquier otra licencia, entre las cuáles se incluyen licencias cerradas.&lt;/p&gt;
+
+&lt;p&gt;Igualmente, el artículo 12 debería obligar a la &lt;em&gt;autoridad competente&lt;/em&gt; a publicar ese registro de programas informáticos que poseen los poderes públicos venezolanos, en conjunto con su licenciamiento y proveedores. Esto es vital sobretodo en las excepciones que permite el artículo 51. Necesitamos transparencia, necesitamos saber qué software se está usando que no es software libre y qué razones se dieron. Igualmente se necesita un mecanismo para apelar estas excepciones previamente y posterior a su otorgamiento.&lt;/p&gt;
+
+&lt;p&gt;(Artículo 35)&lt;/p&gt;
+
+&lt;h2&gt;Sobre la &quot;transferencia del conocimiento asociado para su comprensión&quot;&lt;/h2&gt;
+
+&lt;p&gt;Hay una apreciación errónea sobre las libertades en los programas libres, en la ley aparece repetidamente la frase «&lt;em&gt;y la transferencia del conocimiento asociado para su comprensión&lt;/em&gt;» en conjunto con la definición de software libre. Esto no es cierto y de hecho se contradice con lo escrito en muchas licencias de software libre, que el software es entregado «&lt;em&gt;AS IS&lt;/em&gt;», sin garantías de que funcione y con cláusula de desprendimiento de responsabilidad en caso de que algo funcione mal y cree un gran problema (o incluso un pequeño problema). Además transferir el conocimiento asociado para su comprension requeriría que el programa el enseñara a las personas a programar, pues si alguien no programa no lo comprenderá, o hacer una documentación extensiva de la aplicación lo cuál no es cierto. Entiendo que esto esta incluído en la multitud de contratos que ha tenido el gobierno con proveedores, pero ahí es donde pertenece, en los contratos, no en la ley de infogobierno, mucho menos en las deficiones sobre software libre.&lt;/p&gt;
+
+&lt;p&gt;El artículo 36 incluso lo dice explícitamente como parte de las «&lt;em&gt;Licencias&lt;/em&gt;», cuestión que en ninguna licencia de software libre actual podrán encontrar.&lt;/p&gt;
+
+&lt;p&gt;(Artículo 36)&lt;/p&gt;
+
+&lt;h2&gt;Queremos más transparencia&lt;/h2&gt;
+
+&lt;p&gt;Lo poco que llegamos a ver sobre transparencia no obliga en ninguna forma a nadie a publicar. No sólo no obliga sino que en las partes donde no se limita a citar una ley que regula el acceso a la información pública, lo que hace es pedir a burócratas quienes históricamente no han sido transparentes en sus actuaciones a que promuevan la transparencia (41.5); por lo que tendremos que unirnos a las propuestas de &lt;a href=&quot;http://espaciopublico.org&quot;&gt;Espacio Público&lt;/a&gt; y &lt;a href=&quot;http://transparencia.org.ve&quot;&gt;Transparencia Venezuela&lt;/a&gt; para lograr más en ese campo, quienes ya entregaron un proyecto de Ley Orgánica de Transparencia y Acceso a la Información Pública.&lt;/p&gt;
+
+&lt;h2&gt;¿Cómo es la cooperación?&lt;/h2&gt;
+
+&lt;p&gt;El artículo 30 habla del principio de cooperación entre el Poder Público y el Poder Popular, sin embargo, nada dice de cómo debe ejercerse esto. Dejar este tema para el reglamento de la ley es excluir al poder popular de voz al momento de establecer los mecanismos para esta cooperación. Ha sido histórico el conflicto Poder Popular vs. Poder Público en este tema, incluso entre grupos del mismo factor político, por lo que establecer de inmediato en la ley, que es consultada al pueblo, los mecanismos daría certeza y una gran muestra de verdadero deseo cooperativo.&lt;/p&gt;
+
+&lt;h2&gt;Es excluyente&lt;/h2&gt;
+
+&lt;p&gt;Y este no es un problema de esta ley nada más, es un problema de interpretación de quién es el Poder Popular. Según la interpretación del gobierno nacional y la mayoría de los gobiernos regionales el Poder Popular sólo está representado mediante los consejos comunales y las comunas. Aquí quedan por fuera las comunidades organizadas en esquemas diferentes a consejo comunal/comuna, mucho menos las ONGs. Esto hace que la colaboración y cooperación entre pueblo y gobierno se vea limitado a solo los que componen y coinciden en ese «Poder Popular». Se está excluyendo a los que no participan y se deja de apreciar las cooperaciones por su valor para pasar a apreciarse por su origen.&lt;/p&gt;
+
+&lt;h2&gt;Del comité de tecnología sin tecnólogos&lt;/h2&gt;
+
+&lt;p&gt;El anteproyecto contempla la creación de un Comité Nacional para el Uso de Tecnologías de Información, cuyo fin sería promover y consolidar el uso y aprovechamiento de las TI en la APN. ¿Quienes espera uno que conformen ese comité? &lt;strong&gt;Personas expertas en promover el uso y expertas en uso de TI&lt;/strong&gt;, sin embargo, está conformado por burócratas que si acaso serán usuarios casuales de TI, y que de todos sólo uno es de la materia de TI (el Ministro con competencia en tecnología de información).&lt;/p&gt;
+
+&lt;p&gt;¿Qué puede lograr un comité que no tiene ni idea de lo que le corresponde promover? Y no es sólo promover, ¡inclusive le corresponde «&lt;em&gt;establecer lineamientos y estrategias pra el desarrollo de las tecnologías de información&lt;/em&gt;»! (41.2)&lt;/p&gt;
+
+&lt;p&gt;Sí, hay «unidades de apoyo», pero ¿por qué no son esas unidades de apoyo los miembros permanentes de ese comité y los que toman las decisiones? ¿Por qué hay que seguir dependiendo de la cima de la pirámide jerárquica para tomar decisiones si la idea es ir aplanando esa pirámide y volver las decisiones tan horizontales como sean posibles? ¿Por qué darle más funciones a burócratas que &lt;strong&gt;ya&lt;/strong&gt; no son capaces de cumplir a cabalidad con las funciones que tienen asignadas? ¿Qué eficiencia se puede esperar entonces?&lt;/p&gt;
+
+&lt;p&gt;Y si la excusa es que se necesitan tomar decisiones políticas entonces les recuerdo que las cabezas de los ministerios no se llenan con personas capaces en la materia sino ya están son personas que tomen decisiones políticas y no técnicas, los técnicos son los asesores.&lt;/p&gt;
+
+&lt;p&gt;(Artículo 39 en adelante).&lt;/p&gt;
+
+&lt;h2&gt;Los conflictos de competencia&lt;/h2&gt;
+
+&lt;p&gt;El capítulo I del título III tiene conflicto &lt;strong&gt;absoluto&lt;/strong&gt; con el capítulo II del mismo título (inclusive con el capítulo III donde habla del CNTI). Este segundo capítulo empodera con capacidad de decisión al ministerio con competencia en tecnologías de información, sin embargo, tiene mucha de las mismas competencias que el comité de tecnología sin tecnólogos.&lt;/p&gt;
+
+&lt;p&gt;Sin competencias claras no es que se hacen las cosas 2 y 3 veces sino que ¡&lt;strong&gt;no se hacen y se tienen 2 y 3 excusas&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;h2&gt;Queremos privacidad&lt;/h2&gt;
+
+&lt;p&gt;En la ley se menciona que todas las actuaciones se harán bajo el respeto a la vida privada y confidencialidad de los ciudadanos, sin embargo, esto sólo es demostrable si las actuaciones del poder público son auditables. Más cuando el artículo 53 en su numeral 9 permite a la SUSCERT «Extraer, revisar y analizar las trazas y bitácoras de equipos y herramientas de redes.», siendo evidente que estas incluyen las de CANTV y probablemente cualquier otro ISP. Tiene que ser pública la razón de esa extracción de datos así como la información a menos que amerite ser privado. La única forma de que se extraiga información privada sobre un ciudadano debería ser por solicitud judicial y para atender una causa ya en proceso.&lt;/p&gt;
+
+&lt;h2&gt;Sobre la homologación de equipos y aplicaciones con soporte criptográfico&lt;/h2&gt;
+
+&lt;p&gt;Aquí hace falta ser más explícito. Dice que la certificación tendrá una duración de tres años pero ¿esto soporta cambio de versiones? ¿Qué cambios se cubren y qué cambios no? ¿Qué hace que una aplicación o equipo califique para que se haga de nuevo la revisión para la homologación?&lt;/p&gt;
+
+&lt;h2&gt;Correcciones menores&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Artículo 5.2: Documento electrónico no es un documento digitalizado, es un documento digital.&lt;/li&gt;
+&lt;li&gt;Artículo 27: la certificación solicitada para documentos que deberían ser impresos por ley debe aplicar a todos los documentos electrónicos, incluso aquellos que no estén destinados por ley a ser impresos. Otorgar una certificación y un repositorio digital desde donde se pueda bajar una copia para la comprobación de su autenticidad es básica para dejar atrás el ciclo del papel.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Finalmente&lt;/h2&gt;
+
+&lt;p&gt;Queremos &lt;strong&gt;realidades&lt;/strong&gt;, no leyes bonitas. Desde el 2009 la Ley del Registro Civil contempla la digitalización del registro civil venezolano, la otorgación de un número único de identidad desde el nacimiento a los venezolanos y la vacatio legis era de 12 meses apenas.&lt;/p&gt;
+
+&lt;p&gt;Ya es mitad del año 2013 y nada de esto está si quiera en los planes de los burócratas.&lt;/p&gt;
+
+&lt;p&gt;No queremos una ley que esté hecha a medida del gobierno, un gobierno que le encanta la propaganda, firmar papelitos y mostrarlos como hechos. Queremos hechos que se hagan conocidos porque son &lt;strong&gt;realidad&lt;/strong&gt; no porque los repiten y los repiten en los micros del gobierno pero que al ir a una institución pública no tienen ni idea de qué se les está hablando. (Que es lo que pasa con los registros y la ley del Registro Civil).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Comentarios a &lt;a href=&quot;https://twitter.com/joseluisrivas&quot;&gt;@joseluisrivas&lt;/a&gt; o &lt;a href=&quot;https://twitter.com/ghostbar&quot;&gt;@ghostbar&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Less Swap</title>
+          <link>/2013/01/27/less-swap</link>
+          <guid isPermaLink="true">/2013/01/27/less-swap</guid>
+          
+          <pubDate>Sun, 27 Jan 2013 12:26:02 +0000</pubDate>
+          <description>&lt;p&gt;My old X61 has 2G in RAM and 3G in Swap. It seems my using-habit for Google Chrome is heavy (more than 20 tabs open most of the time) so my swap is normally being used above the 1.8G-mark. That means, my disk is constantly being written and read, and since this is the original hard-drive scare comes to my mind: &lt;em&gt;will I blow-up my disk if I continue doing this?&lt;/em&gt; and the heat this disk-use&#39;s generating was absurd.&lt;/p&gt;
+
+&lt;p&gt;That&#39;s not good, at all, I prefer having cache used than swap; in Venezuela is not that easy to get a good sale on hard-drives (you know, is hard to get dollars here, since is illegal to buy them unless the govt gives you permission).&lt;/p&gt;
+
+&lt;p&gt;So the first thing that comes to my mind is &lt;code&gt;sysctl&lt;/code&gt;. If I wanted to cofigure swap it would be with a kernel parameter. So running &lt;code&gt;sysctl -a | grep swap&lt;/code&gt; throws me &lt;code&gt;vm.swappiness = 60&lt;/code&gt;, and a little google search tells me more about it.&lt;/p&gt;
+
+&lt;p&gt;If the swappiness is close to 0 then it will use the swap only if it is really necessary, if it is close to 100 then it will use the swap aggressively. Mine was at 60, and it was really aggressive.&lt;/p&gt;
+
+&lt;p&gt;The next steps for me was doing &lt;code&gt;sudo echo &#39;vm.swappiness = 1&#39; &amp;gt;&amp;gt; /etc/sysctl.conf &amp;amp;&amp;amp; sudo sysctl -p&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now my system is really smooth and using Chrome + Terminal + Tmux + Rhythmbox is acceptable.&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+      
+        <item>
+          
+          <title>Sobre las Tecnologías Libres</title>
+          <link>/2013/01/23/sobre-las-tecnologias-libres</link>
+          <guid isPermaLink="true">/2013/01/23/sobre-las-tecnologias-libres</guid>
+          
+          <pubDate>Wed, 23 Jan 2013 15:54:40 +0000</pubDate>
+          <description>&lt;p&gt;Ayer el diputado Leomagno Flores ha dado unas lamentables palabras en la 2da. Discusión de la Ley de Infogobierno en la Asamblea Nacional de Venezuela:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;(...) El Software Libre es la dictadura de un sistema informático, violando el principio básico de la neutralidad tecnológica (...)&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Lo que es más triste del caso es que él es el presidente de la Comisión de Ciencia y Tecnología de la Asamblea Nacional. ¿Cómo puede haber tanta ignorancia en una sola frase? Aprovechando que es de Táchira le ofrecí, a través del único medio de comunicación que tiene público -- su twitter --, ir a su despacho y explicarle mejor qué es el software libre y pueda estar mejor informado, pero no ha respondido. Quizás pensó que era una amenaza, luego de la cayapa que le han dado (y no es que no se la merezca). Por eso aprovecho a explicarle por este medio a él, y a cualquiera que llegue a leer, qué es el software libre y las tecnologías libres; así como los beneficios que supondrían para cualquier país.&lt;/p&gt;
+
+&lt;h2&gt;Un poco de contexto&lt;/h2&gt;
+
+&lt;p&gt;El Software Libre está muy atado a la cultura hacker y al internet desde sus inicios¹. Algo que diferencia a las comunidades hackers de otro tipo de comunidades es que tienen una cultura de compartir conocimiento e información, pues después de todo, un hacker es alguien ávido de conocimiento especializado. Los inicios de esta cultura hacker podemos establecerla en 1961 en el MIT, cuando adquirieron la primera PDP-1. Estos primeros hackers se convertirían en el Laboratorio de Inteligencia Artificial del MIT y gracias a la red ARPA se extendió su influencia por todo EEUU y el mundo por el año 1969. Gracias a esta red, pudieron compartir información entre laboratorios y el Laboratorio de AI de Stanford así como el de Carnegie-Mellon pasaron a ser casi tan importantes como el notorio LAI del MIT.&lt;/p&gt;
+
+&lt;p&gt;Estos hackers para aprovechar al máximo las PDP-10 que producía NEC empezaron a hacer sus propios sistemas operativos (compitiendo y colaborando entre ellos), y gracias a esto lograron generar técnicas innovadoras que marcan muchos principios de cómo funcionan nuestras computadoras hoy en día. De ahí también salió UNIX, sistema operativo en el que se basan todos los sistemas operativos hoy en día menos Windows, y quien lo hizo su misión era poder usarlo desde afuera de los laboratorios.&lt;/p&gt;
+
+&lt;p&gt;Estas personas compartieron información y conocimiento para crear cosas mejores, fuera de las imposiciones de los creadores de hardware, el cuál definitivamente sería una dictadura de un sistema informático.&lt;/p&gt;
+
+&lt;h2&gt;¿En qué resultó todo eso?&lt;/h2&gt;
+
+&lt;p&gt;Hoy en día esto ha devengado en 2 grandes movimiento, el del Free Software Foundation y el de la Open Source Initiative. Ambos promueven el conocimiento libre, pero tienen filosofías y culturas diferentes. Uno defiende el software libre por sus libertades, otro por las ventajas prácticas que traen al modelo de desarrollo del software. ¿Ve qué dictadura es esta?&lt;/p&gt;
+
+&lt;p&gt;Un desarrollo posterior de UNIX es Linux, que hoy en día cuenta con una fundación para apoyar su desarrollo donde entre sus patrocinantes se cuentan: Fujitsu, HP, NEC, Intel, IBM, Samsung, Cisco, Google, Sony, Toyota, Nokia, Adobe, Dell, JPMorgan, Siemens, Motorola y &lt;a href=&quot;http://www.linuxfoundation.org/about/members&quot;&gt;muchísimos más&lt;/a&gt;. Y Linux es apenas una parte de lo que ha significado avances como Android y ¡el Internet!. Internet no habría sido posible de no haber sido por filosofías como esta, que aún ayudan y mantienen el desarrollo de la internet y sus protocolos ¿Ve qué dictadura es esta? Es una donde los gobiernos no intervienen, porque no pueden, a pesar de que lo han intentado. Usted hoy puede conseguir software libre en EEUU y en Siria, a pesar de haber un bloqueo económico entre estas naciones. De hecho, parte del objetivo de otros movimientos de hackers como el cypherpunk consistió en hacktivismo para eliminar absurdos como estos que los políticos tan &lt;em&gt;amablemente&lt;/em&gt; interponen a los ciudadanos para ayudar al absurdo de sus gestiones. ¿Se fija quién promueve la neutralidad tecnológica? No han sido los gobiernos desde sus leyes sino las personas desde sus actividades en comunidades como la del software libre. Ahora, que usted diga que el software libre viola &lt;em&gt;el principio de la neutralidad tecnológica&lt;/em&gt;. ¿De dónde ha sacado eso?&lt;/p&gt;
+
+&lt;p&gt;Primero, hay diferentes acepciones de &lt;em&gt;neutralidad tecnológica&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Como actitud de proveedores de información (gobiernos, empresas, individuos)&lt;/strong&gt;, es donde se usan formatos y protocolos de libre acceso a todas las personas, de tal forma que no se limita el acceso de estas personas a la información por no contar con cierta tecnología proveída por X organización o individuo. Hay muchísimos formatos libres que permiten que esto no suceda, como ODT, HTML, ePUB, XML. Como verá, esto es vital para un gobierno, pues todos sus ciudadanos deben ser capaces de acceder a la información sin necesidad de tecnologías especiales para hacerlo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Como función política del software (esto es parte del pensamiento determinista sobre la tecnología)&lt;/strong&gt;, hay algunos que consideran el software y tecnologías libres en general son parte de un modelo político y resultado de ello, entre esos están muchos de los que promueven el software libre dentro de la administración pública nacional. Como en todo, hay desacuerdos, y yo me cuento entre aquellos que está en desacuerdo con este concepto. Para resumir mi posición, en español lo neutro se define como aquello indiferente a la política o que se abstiene de interferir en ella, y la tecnología, en una sociedad abierta y globalizada como la que tenemos actualmente, sugerir determinismos regionales en base a respuestas globales, en las cuáles además los determinismos necesarios se presentan en pocos lugares de donde se han desarrollado gran parte de estas tecnologías no están presentes, lo considero un absurdo. La tecnología es neutra, pues quien le da sentido político es el individuo que la implementa. El software libre ha sido desarrollado tanto por intereses altruistas como por intereses económicos, y no se ha hecho diferenciación entre ellos. Por lo tanto, por más argumentación que se haga al respecto, la realidad demuestra algo de manera constante y repetible: la tecnología no forma parte de corriente política alguna. Les recuerdo que modelos &lt;em&gt;comunales&lt;/em&gt; ya habían desarrollado tecnologías y no se había desarrollado culturas de compartir información, por el contrario, se consideraban secretos de Estado. La mejor demostración de que la tecnología es neutra en moralidad y política es que se puede usar una llave GPG para enviar información cifrada para hacer un acto terrorista así como para simplemente enviar una carta de amor, y la tecnología no hace diferencias entre esto, ni previo al uso ni durante.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;¿Y ahora qué?&lt;/h2&gt;
+
+&lt;p&gt;Venezuela está en un momento crítico en su política. Los unos dicen apoyar el software libre y la sociedad del conocimiento libre pero no son capaces de darnos presupuestos explicativos a los ciudadanos de en qué gastaron los reales (ni siquiera datos en frío, sin procesar); y los otros quieren transparencia pero están en contra del conocimiento libre. Lo quieren para ellos solos.&lt;/p&gt;
+
+&lt;p&gt;Hay países en las que esto ha sido tomado en serio y se han concretado hubs de data como &lt;a href=&quot;http://data.gov.uk&quot;&gt;data.gov.uk&lt;/a&gt; donde se publica información del gobierno de cuantos datasets se consigan y puedan hacerse públicos. Aquí en CNE ni siquiera es capaz de lanzarnos los resultados en un simple CSV. En EEUU las elecciones de la Casa de Representantes (la cámara baja del poder legislativo) es accesible en tiempo real vía un API. Aquí liberan información, pero no la concerniente a su gestión como gobierno y esa es la que le concierne principalmente como gobierno. Incluso, cuando alguien libera información que no le gusta entonces hacen leyes para volver esa información &lt;em&gt;ilegal&lt;/em&gt;, como el valor del dólar en el mercado abierto.&lt;/p&gt;
+
+&lt;p&gt;Lo que nos queda a los ciudadanos, sobre todos a aquellos en la comunidad hacker venezolana, es hacer hacktivismo para liberar la información a la que podamos acceder, y aquella información que no tenemos conseguirla de alguna forma. Una buena plataforma para esto es &lt;a href=&quot;http://openve.github.com/&quot;&gt;OpenVE&lt;/a&gt; que ha estado un poco detenida últimamente pero a la que invito a contribuir con código y conocimiento para construir una mejor sociedad, ya que evidentemente con los políticos no contamos.&lt;/p&gt;
+
+&lt;p&gt;Hoy, en vez de invitarlos a la crítica fácil, los invito al trabajo por una sociedad libre y abierta, sin esperar por nadie ni el permiso de alguien.&lt;/p&gt;
+
+&lt;p&gt;Recuerden, no porque las cosas sean ley significan que estén bien.&lt;/p&gt;
+
+&lt;p&gt;Happy hacking.&lt;/p&gt;
+
+&lt;p&gt;¹ &lt;strong&gt;Lecturas relacionadas&lt;/strong&gt;: «&lt;em&gt;:(){ :|:&amp;amp; };: Internet, hackers y software libre&lt;/em&gt;», «&lt;em&gt;En el principio... fue la línea de comandos&lt;/em&gt;», «&lt;em&gt;La Catedral y El Bazar&lt;/em&gt;» y «&lt;em&gt;&lt;a href=&quot;http://www.cypherpunks.to/faq/cyphernomicron/cyphernomicon.html&quot;&gt;Cyphernomicon&lt;/a&gt;&lt;/em&gt;».&lt;/p&gt;
+
+          </description>
+        </item>
+      
+    
+  </channel>
+</rss>
