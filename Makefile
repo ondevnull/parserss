@@ -15,7 +15,7 @@ test-nonet:
 
 test-net:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
-		---reporter $(REPORTER) \
+		--reporter $(REPORTER) \
 		--globals setImmediate,clearImmediate \
 		$(MOCHA_OPTS) \
 		test/net-test-*.js
