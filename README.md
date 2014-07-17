@@ -25,6 +25,11 @@ API
   - `max_number` - max number of articles, defaults to 10. 0 would mean as much as possible.
   - `callback` - First parameter is `Error`, second is the resultant JSON file.
 
+Tests
+-----
+
+Just run `npm test`.
+
 Author
 ------
 © 2014, Jose Luis Rivas `<me@ghostbar.co>`
