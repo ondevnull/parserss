@@ -4,7 +4,8 @@
   "description": "Small RSS Parser",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "start": "./node_modules/.bin/gulp",
+    "test": "./node_modules/.bin/gulp test"
   },
   "keywords": [
     "rss",
